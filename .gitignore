@@ -1,6 +1,13 @@
 HELP.md
+<<<<<<< HEAD
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+=======
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+>>>>>>> b5ae3a3... first commit
 
 ### STS ###
 .apt_generated
@@ -23,5 +30,12 @@ HELP.md
 /dist/
 /nbdist/
 /.nb-gradle/
+<<<<<<< HEAD
 /build/
 info.log*
+=======
+build/
+
+### VS Code ###
+.vscode/
+>>>>>>> b5ae3a3... first commit
