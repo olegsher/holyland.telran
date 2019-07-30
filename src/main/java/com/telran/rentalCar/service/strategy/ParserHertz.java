@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class ParserHertz implements Parser {
     @Value("${parser.url.hertz}")
     String url;
-
+ 
     @Override
     public void parse() {
     //concretely parser
