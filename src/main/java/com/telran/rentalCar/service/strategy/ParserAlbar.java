@@ -2,10 +2,11 @@ package com.telran.rentalCar.service.strategy;
 
 import com.telran.rentalCar.service.Parser;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-public class ParserParser implements Parser {
-//    this is a parser for Albar
-    @Value("${parser.url.budget}")
+@Component
+public class ParserAlbar implements Parser {
+    @Value("${parser.url.albar}")
     String url;
 
     @Override
