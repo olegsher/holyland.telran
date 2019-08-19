@@ -1,35 +1,39 @@
 package com.telran.rentalCar.service.albarJson;
 
-
 import java.io.IOException;
+import org.springframework.boot.configurationprocessor.json.JSONException;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 
+
 @Service
 public class AlbarJsonServiceImpl implements AlbarJsonService {
 
+    public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
+        String content = new String(Files.readAllBytes(Paths.get(filename)));
+        return new JSONObject(content);
+    }
+
     @Override
     public String getAllCars() {
+        JSONObject combined = null;
 
-        String cars = "cars.json";
-        String carsJson = null;
-        String location = "location.json";
-        String locationJson = null;
-        String extras = "extras.json";
-        String extrasJson = null;
-        String languages = "languages.json";
-        String languagesJson = null;
         try {
-            carsJson = Files.lines(Paths.get(cars)).reduce("", String::concat);
-            locationJson = Files.lines(Paths.get(location)).reduce("", String::concat);
-            extrasJson = Files.lines(Paths.get(extras)).reduce("", String::concat);
-            languagesJson = Files.lines(Paths.get(languages)).reduce("", String::concat);
+            combined = new JSONObject();
+            combined.put("Cars", parseJSONFile("cars.json"));
+            combined.put("Location", parseJSONFile("location.json"));
+            combined.put("Language", parseJSONFile("languages.json"));
+            combined.put("Extras", parseJSONFile("extras.json"));
 
+        } catch (JSONException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return carsJson + "\n" + locationJson +  "\n" + extrasJson + "\n" + languagesJson;
+        return combined.toString();
     }
 }
+
