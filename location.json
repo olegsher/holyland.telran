@@ -1,6 +1,6 @@
 {
-  "Locations": [
-    {
+
+
       "Afula": {
         "address": "70 Menachem Begin Street",
         "openhours": "Sun-Thu 08:00-18:00, Fri 08:00-13:00",
@@ -126,6 +126,4 @@
         "openhours": "Sun-Thu 08:00-18:00, Fri 08:00-13:00",
         "phone": "+97246666123"
       }
-    }
-  ]
 }
