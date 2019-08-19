@@ -1,6 +1,4 @@
 {
-  "Extras": [
-    {
       "albar": {
         "childBooster": 5,
         "xhildSeat": 5,
@@ -12,6 +10,4 @@
         "airportFee": 39,
         "vipService": 10
       }
-    }
-  ]
 }
