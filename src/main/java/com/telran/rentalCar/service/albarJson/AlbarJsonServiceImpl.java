@@ -12,9 +12,15 @@ import java.nio.file.Paths;
 @Service
 public class AlbarJsonServiceImpl implements AlbarJsonService {
 
+   
     public static JSONObject parseJSONFile(String filename) throws JSONException, IOException {
         String content = new String(Files.readAllBytes(Paths.get(filename)));
         return new JSONObject(content);
+    }
+
+    public static JSONArray parseJSONArray(String filename) throws JSONException, IOException {
+        String content = new String(Files.readAllBytes(Paths.get(filename)));
+        return new JSONArray(content);
     }
 
     @Override
@@ -23,11 +29,11 @@ public class AlbarJsonServiceImpl implements AlbarJsonService {
 
         try {
             combined = new JSONObject();
-            combined.put("Cars", parseJSONFile("cars.json"));
+            combined.put("Cars", parseJSONArray("cars.json"));
             combined.put("Location", parseJSONFile("location.json"));
             combined.put("Language", parseJSONFile("languages.json"));
             combined.put("Extras", parseJSONFile("extras.json"));
-
+            System.err.println(combined);
         } catch (JSONException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -36,4 +42,3 @@ public class AlbarJsonServiceImpl implements AlbarJsonService {
         return combined.toString();
     }
 }
-
