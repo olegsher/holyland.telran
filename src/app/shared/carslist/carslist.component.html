@@ -1,0 +1,33 @@
+  <div style="width: 900px; margin: auto;  ">
+<mat-list class="cars-list">
+  <mat-grid-list class="cars-grid-list" cols="3" rowHeight="2:1" *ngFor="let car of cars$|async"
+                 style="margin-bottom: 10px; border: 1px solid darkgrey;">
+
+    <mat-grid-tile [colspan] = "1" [rowspan] = "2" class="grid-tile-col-1" >
+          <img [src]="car.ImageUrl"
+               style="height: 10vw; width: 16vw">
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan] = "2" [rowspan] = "1"  style="background: deepskyblue">
+
+      <mat-grid-tile-header><h2>{{car.vehicleType}}</h2></mat-grid-tile-header>
+
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan] = "2" [rowspan] = "1" class="grid-tile-col-2" style="background: green">
+      <div>
+      <div>Seats: <mat-icon>people</mat-icon><label>{{car.seats}}</label></div>
+      <div>Transmission: <mat-icon>gavel</mat-icon><label>{{car.transmission}}</label></div>
+      <div>Air Condition: <mat-icon>ac_unit</mat-icon><label>{{car.airCondition}}</label></div>
+      <label><h1>{{car.price|currency:'USD'}}</h1></label>
+        <button [routerLink]="" style="width: 100%">Book</button>
+      </div>
+
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</mat-list>
+  </div>
+

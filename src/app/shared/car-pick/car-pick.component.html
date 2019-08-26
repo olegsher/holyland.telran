@@ -1,0 +1,120 @@
+<div class="row">
+  <div class="col">
+    <div class="insurance_extras">
+      <h1 class="card-protection">Protection Information </h1>
+      <div class="card-body" style="background: white" *ngIf="car">
+        <form #form="ngForm">
+          <div class="left">
+            <mat-checkbox [(ngModel)]="cdwSelected" (click)="totalCostCounter()" [ngModelOptions]="{standalone: true}">CDW</mat-checkbox>
+          </div>
+          <div class="right">${{car.insurance_CDW}}.00\Day</div>
+          <mat-divider></mat-divider>
+
+          <div class="left">
+            <mat-checkbox [(ngModel)]="tpSelected" (click)="totalCostCounter()" [ngModelOptions]="{standalone: true}"> TP</mat-checkbox>
+          </div>
+          <div class="right">${{car.insurance_TP}}.00/Day</div>
+          <mat-divider></mat-divider>
+
+          <div class="left">
+            <mat-checkbox>3PLC</mat-checkbox>
+          </div>
+          <div class="right">${{car.insurance_3PLC}}.00/Day</div>
+          <mat-divider></mat-divider>
+
+          <div class="left">
+            <mat-checkbox>Super CDW</mat-checkbox>
+          </div>
+          <div class="right">${{car.insurance_SuperCDW}}.00/Day</div>
+          <mat-divider></mat-divider>
+
+          <div class="left">
+            <mat-checkbox>Super TP</mat-checkbox>
+          </div>
+          <div class="right">${{car.insurance_SuperTP}}.00/Day</div>
+
+        </form>
+      </div>
+
+      <h1 class="card-header">Extras</h1>
+      <div class="card-body" style="background: white">
+
+        <div class="left">
+          <mat-checkbox>CBS Child Booster Seat (8 years and above)</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox> CSI Child Seat for Infant (0-12 months)‎</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>ROADSAFE Assistance</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>Smartphone – Navigation System GPS‎</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>Baby/Child Seat</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>Additional Driver</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>Underage Driver</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+
+        <div class="left">
+          <mat-checkbox>Airport Fee</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+
+        <mat-divider></mat-divider>
+        <div class="left">
+          <mat-checkbox>VIP SERVICE</mat-checkbox>
+        </div>
+        <div class="right">${{car.insurance_TP}}.00/Day</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="total">
+      <h1>Total amount </h1>
+      <div style="background: white">
+        {{totalCountValue}}
+      </div>
+<!--      <div style="background: white" *ngIf="tpSelected === true">-->
+<!--        {{totalCountValue ++ car.insurance_TP}}-->
+<!--      </div>-->
+<!--      <div style="background: white">-->
+<!--        {{totalCountValue}}-->
+<!--      </div>-->
+    </div>
+
+  </div>
+</div>

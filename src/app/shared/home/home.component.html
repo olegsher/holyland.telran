@@ -1,0 +1,29 @@
+<div class="card">
+  <h3 class="card-header">Let’s find your ideal car?</h3>
+  <div class="mat-card-body">
+    <form #form="ngForm" (ngSubmit)="add(from)">
+        <p>
+        <mat-form-field>
+          <input matInput [min]="minPickDate" [max]="maxPickDate" [matDatepicker]="pickDate" placeholder="Pick-up Date:">
+          <mat-datepicker-toggle matSuffix [for]="pickDate"></mat-datepicker-toggle>
+          <mat-datepicker #pickDate></mat-datepicker>
+        </mat-form-field>
+        </p>
+        <p>
+        <mat-form-field>
+          <input matInput [min]="minDropDate" [max]="maxDropDate" [matDatepicker]="dropDate" placeholder="Drop-off Date:">
+          <mat-datepicker-toggle matSuffix [for]="dropDate"></mat-datepicker-toggle>
+          <mat-datepicker #dropDate></mat-datepicker>
+        </mat-form-field>
+        </p>
+        <p>
+        <mat-checkbox>Driver aged more then 18?</mat-checkbox>
+        </p>
+        <button mat-raised-button type="button" routerLink="/cars" (click)="gotoCarsList()" [disabled]="form.invalid">Search</button>
+    </form>
+  </div>
+</div>
+
+
+
+
