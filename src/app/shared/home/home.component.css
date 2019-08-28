@@ -1,0 +1,17 @@
+mat-form-field, mat-checkbox {
+  width: 100%;
+}
+
+.card {
+  background-color:lightskyblue;
+  color:black;
+  padding:20px;
+  width: 20%;
+  margin: 10%;
+  position: fixed;
+}
+
+.card-header {
+
+    margin-bottom: 10px;
+}

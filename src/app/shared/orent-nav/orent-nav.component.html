@@ -1,0 +1,41 @@
+<nav mat-tab-nav-bar mat-align-tabs="end">
+
+  <label mat-tab-link [matMenuTriggerFor]="languageMenu" >
+    <mat-icon>      <img src="https://img.icons8.com/color/24/000000/great-britain.png">    </mat-icon>
+    &nbsp;&nbsp;    {{languageMenuItems[0].label}}
+  </label>
+
+  <mat-menu #languageMenu="matMenu">
+    <a mat-menu-item
+       *ngFor="let item of languageMenuItems"
+       [routerLink]="item.path">
+      <img [src]="item.image" />
+      &nbsp;&nbsp;{{item.label}}
+    </a>
+  </mat-menu>
+
+
+<label mat-tab-link [matMenuTriggerFor]="currencyMenu" >
+  <mat-icon>      <img src="https://img.icons8.com/material/24/000000/shekel.png">    </mat-icon>
+  &nbsp;&nbsp;{{currencyMenuItems[0].label}}
+</label>
+
+<mat-menu #currencyMenu="matMenu">
+  <a mat-menu-item
+     *ngFor="let item of currencyMenuItems"
+     [routerLink]="item.path">
+    <img [src]="item.image" />
+    &nbsp;&nbsp;{{item.label}}
+  </a>
+</mat-menu>
+
+  <label mat-tab-link>
+    <mat-icon>      menu    </mat-icon>
+    &nbsp;&nbsp;Vendor
+
+  </label>
+
+
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,39 @@
+
+
+
+
+.insurance_extras {
+  /*width: 50%;*/
+  /*padding-left:40%;*/
+  float: right;
+  width: 60%;
+}
+
+.total {
+  background: cornflowerblue;
+  float: left;
+  width: 40%;
+  height: 500px;
+}
+
+mat-checkbox {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+  width: 500px;
+
+}
+
+.left{
+  display:table-cell;
+  padding-left: 30px;
+}
+.right{
+
+  width:50px;
+  height:100%;
+  display:table-cell;
+
+
+}
