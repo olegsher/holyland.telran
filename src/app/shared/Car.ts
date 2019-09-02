@@ -1,4 +1,5 @@
 export interface Car {
+
     country: string;
     companyName: string;
     id: string;
@@ -32,4 +33,5 @@ export interface Car {
     insurance_SuperTP: number;
     insurance_SuperCDWMonth: number;
     insurance_SuperTPMonth: number;
+
 }

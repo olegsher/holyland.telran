@@ -1,6 +1,10 @@
   <div style="width: 900px; margin: auto;  ">
+<!--    <div>-->
+<!--      <button (click)="getCars()">Get Cars</button>-->
+<!--    </div>-->
+
 <mat-list class="cars-list">
-  <mat-grid-list class="cars-grid-list" cols="3" rowHeight="2:1" *ngFor="let car of cars$|async"
+  <mat-grid-list class="cars-grid-list" cols="3" rowHeight="2:1" *ngFor="let car of arrayCars"
                  style="margin-bottom: 10px; border: 1px solid darkgrey;">
 
     <mat-grid-tile [colspan] = "1" [rowspan] = "2" class="grid-tile-col-1" >
@@ -21,7 +25,7 @@
       <div>Transmission: <mat-icon>gavel</mat-icon><label>{{car.transmission}}</label></div>
       <div>Air Condition: <mat-icon>ac_unit</mat-icon><label>{{car.airCondition}}</label></div>
       <label><h1>{{car.price|currency:'USD'}}</h1></label>
-        <button [routerLink]="" style="width: 100%">Book</button>
+        <button [routerLink]="'/cars/'+car.id" style="width: 100%">Book</button>
       </div>
 
     </mat-grid-tile>
